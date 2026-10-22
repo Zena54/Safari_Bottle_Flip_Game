@@ -103,7 +103,8 @@ export function Settings() {
         </Link>
       )}
       <div className="sub center">
-        <a href="/terms">Terms</a> · <a href="/privacy">Privacy</a>
+        <Link to="/terms">Terms</Link>
+        <Link to="/privacy">Privacy Policy</Link>
       </div>
     </Screen>
   );

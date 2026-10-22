@@ -1,7 +1,7 @@
 /** Step 1 of login: Ethiopian number, optional token, required terms + optional brand SMS. */
 import { normalizeEthiopianPhone } from '@bottle-flip/shared';
 import { useState, type FormEvent } from 'react';
-import { useLocation, useNavigate } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { useMe, useRequestOtp } from '../api/hooks';
 import { BrandSlot, Screen, TopBar, errorMessage } from '../components/ui';
 import { loadPendingToken } from '../state/cache';
@@ -95,7 +95,7 @@ export function Login() {
         <label className="check">
           <input type="checkbox" checked={terms} onChange={(e) => setTerms(e.target.checked)} required />
           <span>
-            I agree to the <a href="/terms">Terms</a> and <a href="/privacy">Privacy Policy</a>, and I'm 18 or older.
+            I agree to the <Link to="/terms">Terms</Link> and <Link to="/privacy">Privacy Policy</Link>, and I'm 18 or older.
           </span>
         </label>
         <label className="check">
